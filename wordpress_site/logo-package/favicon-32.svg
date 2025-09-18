@@ -1,0 +1,32 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon for 32px -->
+  <g transform="translate(16, 16)">
+    <!-- Shield Base -->
+    <path d="M0 -12 L8 -10 L8 -1 C8 5 4 9 0 12 C-4 9 -8 5 -8 -1 L-8 -10 Z" 
+          fill="#0F172A" 
+          stroke="#26C6DA" 
+          stroke-width="1"/>
+    
+    <!-- Simple grid pattern -->
+    <g opacity="0.7">
+      <rect x="-4" y="-8" width="2" height="2" fill="#26C6DA"/>
+      <rect x="-1" y="-8" width="2" height="2" fill="#10B981"/>
+      <rect x="2" y="-8" width="2" height="2" fill="#26C6DA"/>
+      
+      <rect x="-3" y="-5" width="2" height="2" fill="#10B981"/>
+      <rect x="0" y="-5" width="2" height="2" fill="#26C6DA"/>
+      <rect x="3" y="-5" width="2" height="2" fill="#10B981"/>
+      
+      <rect x="-4" y="-2" width="2" height="2" fill="#26C6DA"/>
+      <rect x="-1" y="-2" width="2" height="2" fill="#10B981"/>
+      <rect x="2" y="-2" width="2" height="2" fill="#26C6DA"/>
+    </g>
+    
+    <!-- Governance Checkmark -->
+    <path d="M-3 1 L-1 3 L4 -2" 
+          stroke="#10B981" 
+          stroke-width="1.5" 
+          stroke-linecap="round" 
+          fill="none"/>
+  </g>
+</svg>

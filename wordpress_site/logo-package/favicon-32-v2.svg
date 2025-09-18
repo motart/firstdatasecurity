@@ -1,0 +1,28 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield icon for 32px -->
+  <g transform="translate(16, 16)">
+    <!-- Shield Outline -->
+    <path d="M0 -12 L8 -10 L8 -1 C8 5 4 9 0 12 C-4 9 -8 5 -8 -1 L-8 -10 Z" 
+          fill="none" 
+          stroke="#1ba3c7" 
+          stroke-width="1.5"/>
+    
+    <!-- Simplified grid -->
+    <g fill="#1ba3c7">
+      <rect x="-4" y="-8" width="2" height="2" rx="0.3"/>
+      <rect x="-1" y="-8" width="2" height="2" rx="0.3"/>
+      <rect x="2" y="-8" width="2" height="2" rx="0.3"/>
+      
+      <rect x="-4" y="-5" width="2" height="2" rx="0.3"/>
+      <rect x="-1" y="-5" width="2" height="2" rx="0.3"/>
+      <rect x="2" y="-5" width="2" height="2" rx="0.3"/>
+    </g>
+    
+    <!-- Checkmark -->
+    <path d="M-3 -1 L0 2 L4 -3" 
+          stroke="#10B981" 
+          stroke-width="1.8" 
+          stroke-linecap="round" 
+          fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark gradient background -->
+  <defs>
+    <radialGradient id="bgRadial" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0F172A"/>
+      <stop offset="100%" style="stop-color:#0E1116"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgRadial)"/>
+  
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="396" height="396" fill="none" stroke="#26C6DA" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Icon (centered and scaled up) -->
+  <g transform="translate(200, 200) scale(2.5)">
+    <!-- Shield Base -->
+    <path d="M0 -20 L12 -17 L12 -2 C12 8 6 15 0 20 C-6 15 -12 8 -12 -2 L-12 -17 Z" 
+          fill="#0F172A" 
+          stroke="#26C6DA" 
+          stroke-width="2"/>
+    
+    <!-- Digital Grid Pattern -->
+    <g opacity="0.8">
+      <rect x="-9" y="-14" width="3" height="3" fill="#26C6DA"/>
+      <rect x="-5" y="-14" width="3" height="3" fill="#10B981"/>
+      <rect x="-1" y="-14" width="3" height="3" fill="#26C6DA"/>
+      <rect x="3" y="-14" width="3" height="3" fill="#10B981"/>
+      <rect x="7" y="-14" width="3" height="3" fill="#26C6DA"/>
+      
+      <rect x="-7" y="-10" width="3" height="3" fill="#10B981"/>
+      <rect x="-3" y="-10" width="3" height="3" fill="#26C6DA"/>
+      <rect x="1" y="-10" width="3" height="3" fill="#10B981"/>
+      <rect x="5" y="-10" width="3" height="3" fill="#26C6DA"/>
+      <rect x="9" y="-10" width="3" height="3" fill="#10B981"/>
+      
+      <rect x="-9" y="-6" width="3" height="3" fill="#26C6DA"/>
+      <rect x="-5" y="-6" width="3" height="3" fill="#10B981"/>
+      <rect x="-1" y="-6" width="3" height="3" fill="#26C6DA"/>
+      <rect x="3" y="-6" width="3" height="3" fill="#10B981"/>
+      <rect x="7" y="-6" width="3" height="3" fill="#26C6DA"/>
+      
+      <rect x="-7" y="-2" width="3" height="3" fill="#10B981"/>
+      <rect x="-3" y="-2" width="3" height="3" fill="#26C6DA"/>
+      <rect x="1" y="-2" width="3" height="3" fill="#10B981"/>
+      <rect x="5" y="-2" width="3" height="3" fill="#26C6DA"/>
+      <rect x="9" y="-2" width="3" height="3" fill="#10B981"/>
+      
+      <rect x="-9" y="2" width="3" height="3" fill="#26C6DA"/>
+      <rect x="-5" y="2" width="3" height="3" fill="#10B981"/>
+      <rect x="-1" y="2" width="3" height="3" fill="#26C6DA"/>
+      <rect x="3" y="2" width="3" height="3" fill="#10B981"/>
+      <rect x="7" y="2" width="3" height="3" fill="#26C6DA"/>
+    </g>
+    
+    <!-- Governance Checkmark -->
+    <path d="M-5 2 L-1 6 L6 -1" 
+          stroke="#10B981" 
+          stroke-width="3" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+  </g>
+  
+  <!-- Company initials below icon -->
+  <g font-family="Inter, sans-serif" fill="#26C6DA" text-anchor="middle">
+    <text x="200" y="320" font-weight="700" font-size="24">FDS</text>
+  </g>
+</svg>

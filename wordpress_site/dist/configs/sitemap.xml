@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- This is a basic sitemap index. WordPress SEO plugins like Yoast or RankMath will generate the actual sitemaps -->
+    
+    <sitemap>
+        <loc>https://firstdatasecurity.com/page-sitemap.xml</loc>
+        <lastmod>2024-09-17T12:00:00+00:00</lastmod>
+    </sitemap>
+    
+    <sitemap>
+        <loc>https://firstdatasecurity.com/post-sitemap.xml</loc>
+        <lastmod>2024-09-17T12:00:00+00:00</lastmod>
+    </sitemap>
+    
+    <sitemap>
+        <loc>https://firstdatasecurity.com/case_study-sitemap.xml</loc>
+        <lastmod>2024-09-17T12:00:00+00:00</lastmod>
+    </sitemap>
+    
+    <sitemap>
+        <loc>https://firstdatasecurity.com/service-sitemap.xml</loc>
+        <lastmod>2024-09-17T12:00:00+00:00</lastmod>
+    </sitemap>
+</sitemapindex>

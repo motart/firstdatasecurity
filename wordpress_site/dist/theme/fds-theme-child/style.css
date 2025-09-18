@@ -1,0 +1,10 @@
+/*!
+Theme Name: First Data Security Child Theme
+Description: Child theme for First Data Security
+Version: 1.0.0
+Template: fds-theme
+*/
+
+@import url("../fds-theme/style.css");
+
+/* Custom modifications can be added here */

@@ -1,0 +1,15 @@
+/*!
+Theme Name: First Data Security Theme
+Description: Premium WordPress theme for First Data Security - SOC compliance services
+Version: 1.0.0
+Author: FDS Team
+Text Domain: fds-theme
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 8.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Template: fds-theme
+*/
+
+/* Main theme styles will be handled by theme.json and block styles */

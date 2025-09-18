@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Block access to WordPress admin and login areas
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+
+# Block access to WordPress includes and content
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/
+
+# Block access to search results and filters
+Disallow: /?s=
+Disallow: /*?s=
+Disallow: /search/
+
+# Block access to attachment pages
+Disallow: /attachment/
+
+# Block access to trackbacks
+Disallow: /trackback/
+Disallow: */trackback/
+
+# Block access to feeds
+Disallow: /feed/
+Disallow: */feed/
+Disallow: /comments/feed/
+
+# Block access to WordPress JSON API (if not needed)
+# Disallow: /wp-json/
+
+# Allow important pages for SEO
+Allow: /wp-content/uploads/
+
+# Sitemap location
+Sitemap: https://firstdatasecurity.com/sitemap.xml

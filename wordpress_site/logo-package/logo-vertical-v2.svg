@@ -1,0 +1,54 @@
+<svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Container (centered) -->
+  <g id="shield-icon" transform="translate(100, 50)">
+    <!-- Shield Outline -->
+    <path d="M0 -35 L20 -30 L20 -10 C20 8 10 20 0 30 C-10 20 -20 8 -20 -10 L-20 -30 Z" 
+          fill="none" 
+          stroke="#1ba3c7" 
+          stroke-width="3" 
+          stroke-linejoin="round"/>
+    
+    <!-- Digital Grid Pattern (3x3 grid) -->
+    <g fill="#1ba3c7">
+      <!-- Top row -->
+      <rect x="-12" y="-23" width="5" height="5" rx="1"/>
+      <rect x="-4" y="-23" width="5" height="5" rx="1"/>
+      <rect x="4" y="-23" width="5" height="5" rx="1"/>
+      
+      <!-- Middle row -->
+      <rect x="-12" y="-15" width="5" height="5" rx="1"/>
+      <rect x="-4" y="-15" width="5" height="5" rx="1"/>
+      <rect x="4" y="-15" width="5" height="5" rx="1"/>
+      
+      <!-- Bottom row -->
+      <rect x="-12" y="-7" width="5" height="5" rx="1"/>
+      <rect x="-4" y="-7" width="5" height="5" rx="1"/>
+      <rect x="4" y="-7" width="5" height="5" rx="1"/>
+    </g>
+    
+    <!-- Governance Checkmark -->
+    <path d="M-8 -5 L-2 1 L8 -12" 
+          stroke="#10B981" 
+          stroke-width="3" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <g id="wordmark" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle">
+    <!-- "FIRST DATA" -->
+    <text x="100" y="110" 
+          font-size="20" 
+          font-weight="700" 
+          fill="#1ba3c7" 
+          letter-spacing="-0.3px">FIRST DATA</text>
+    
+    <!-- "SECURITY" -->
+    <text x="100" y="135" 
+          font-size="20" 
+          font-weight="600" 
+          fill="#26C6DA" 
+          letter-spacing="0px">SECURITY</text>
+  </g>
+</svg>

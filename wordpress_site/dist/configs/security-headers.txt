@@ -1,0 +1,118 @@
+# Security Headers Configuration for First Data Security WordPress Site
+
+## For Nginx (Add to server block in /etc/nginx/sites-available/domain.com)
+
+# Security Headers
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header X-XSS-Protection "1; mode=block" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.google.com;" always;
+add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+# Hide Server Information
+server_tokens off;
+add_header X-Powered-By "" always;
+
+# WordPress Security
+location ~ /\. { deny all; }
+location ~* /(?:uploads|files)/.*\.php$ { deny all; }
+location ~ ^/wp-content/uploads/.*\.(php|php5|phtml)$ { deny all; }
+
+# Disable XML-RPC
+location = /xmlrpc.php { deny all; }
+
+# Protect wp-config.php
+location ~ /wp-config\.php { deny all; }
+
+# Block access to wp-admin for non-admins (optional)
+location ~ ^/wp-admin/admin-ajax.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+}
+
+# Rate limiting for login attempts
+location = /wp-login.php {
+    limit_req zone=login burst=5 nodelay;
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+}
+
+## For Apache (.htaccess additions)
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.google.com;"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Hide Server Information
+ServerTokens Prod
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# WordPress Security
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+
+<Files wp-config.php>
+    order allow,deny
+    deny from all
+</Files>
+
+# Block PHP execution in uploads
+<Directory "wp-content/uploads">
+    <Files "*.php">
+        Order Deny,Allow
+        Deny from All
+    </Files>
+</Directory>
+
+# Disable XML-RPC
+<Files xmlrpc.php>
+    order allow,deny
+    deny from all
+</Files>
+
+## WordPress Security Hardening (Add to wp-config.php)
+
+# Disable file editing
+define('DISALLOW_FILE_EDIT', true);
+
+# Force SSL for admin
+define('FORCE_SSL_ADMIN', true);
+
+# Automatic updates
+define('WP_AUTO_UPDATE_CORE', true);
+
+# Disable XML-RPC
+add_filter('xmlrpc_enabled', '__return_false');
+
+# Hide WordPress version
+remove_action('wp_head', 'wp_generator');
+
+# Disable user enumeration
+if (!is_admin() && isset($_GET['author'])) {
+    wp_redirect(home_url());
+    exit;
+}
+
+## Additional Security Recommendations
+
+1. Keep WordPress, themes, and plugins updated
+2. Use strong passwords and 2FA
+3. Regular security scans and monitoring
+4. Implement Web Application Firewall (WAF)
+5. Regular backups and disaster recovery testing
+6. SSL/TLS certificate monitoring
+7. Access logs monitoring and alerting

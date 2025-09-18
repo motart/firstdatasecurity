@@ -1,0 +1,72 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0E1116"/>
+      <stop offset="50%" style="stop-color:#0F172A"/>
+      <stop offset="100%" style="stop-color:#0E1116"/>
+    </linearGradient>
+    <linearGradient id="overlayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1ba3c7;stop-opacity:0.1"/>
+      <stop offset="50%" style="stop-color:#10B981;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#26C6DA;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bgGradient)"/>
+  <rect width="1584" height="396" fill="url(#overlayGradient)"/>
+  
+  <!-- Logo (positioned left-center) -->
+  <g transform="translate(120, 140)">
+    <!-- Shield -->
+    <g id="shield-icon">
+      <!-- Shield Outline -->
+      <path d="M50 15 L70 20 L70 40 C70 58 60 70 50 80 C40 70 30 58 30 40 L30 20 Z" 
+            fill="none" 
+            stroke="#1ba3c7" 
+            stroke-width="4" 
+            stroke-linejoin="round"/>
+      
+      <!-- Digital Grid Pattern -->
+      <g fill="#1ba3c7">
+        <rect x="37" y="27" width="6" height="6" rx="1"/>
+        <rect x="47" y="27" width="6" height="6" rx="1"/>
+        <rect x="57" y="27" width="6" height="6" rx="1"/>
+        <rect x="37" y="37" width="6" height="6" rx="1"/>
+        <rect x="47" y="37" width="6" height="6" rx="1"/>
+        <rect x="57" y="37" width="6" height="6" rx="1"/>
+        <rect x="37" y="47" width="6" height="6" rx="1"/>
+        <rect x="47" y="47" width="6" height="6" rx="1"/>
+        <rect x="57" y="47" width="6" height="6" rx="1"/>
+      </g>
+      
+      <!-- Governance Checkmark -->
+      <path d="M40 45 L47 52 L60 37" 
+            stroke="#10B981" 
+            stroke-width="4" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            fill="none"/>
+    </g>
+    
+    <!-- Company Name -->
+    <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      <text x="100" y="45" font-weight="700" font-size="36" fill="#1ba3c7" letter-spacing="-0.5px">FIRST DATA</text>
+      <text x="100" y="75" font-weight="600" font-size="36" fill="#26C6DA" letter-spacing="0px">SECURITY</text>
+    </g>
+  </g>
+  
+  <!-- Tagline (centered) -->
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#F8FAFC" text-anchor="middle">
+    <text x="792" y="300" font-weight="400" font-size="32" opacity="0.9">Govern • Engineer • Authorize</text>
+  </g>
+  
+  <!-- Subtle decorative elements -->
+  <g opacity="0.3">
+    <!-- Left accent -->
+    <rect x="0" y="0" width="3" height="396" fill="#1ba3c7"/>
+    <!-- Right accent -->
+    <rect x="1581" y="0" width="3" height="396" fill="#26C6DA"/>
+  </g>
+</svg>

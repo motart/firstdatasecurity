@@ -1,0 +1,229 @@
+/* First Data Security Design System */
+:root {
+  /* Colors */
+  --fds-bg: #0E1116;
+  --fds-bg-alt: #0F172A;
+  --fds-fg: #F8FAFC;
+  --fds-accent: #26C6DA;
+  --fds-accent-2: #10B981;
+  --fds-muted: #94A3B8;
+  --fds-card: #111827;
+  --fds-border: #1F2937;
+  --fds-link: #7DD3FC;
+}
+
+/* Global styles */
+body {
+  background-color: var(--fds-bg);
+  color: var(--fds-fg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  color: var(--fds-fg);
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.17;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1.36;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--fds-fg);
+}
+
+small {
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+code {
+  font-family: ui-monospace, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: var(--fds-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary, .wp-block-button__link {
+  background-color: var(--fds-accent) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 500;
+  padding: 14px 28px !important;
+  border: none !important;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.btn-primary:hover, .wp-block-button__link:hover {
+  background-color: #22B5C8 !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+.btn-primary:focus, .wp-block-button__link:focus {
+  outline: 2px solid var(--fds-accent);
+  outline-offset: 2px;
+}
+
+/* Cards */
+.fds-card {
+  background-color: var(--fds-card);
+  border: 1px solid var(--fds-border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fds-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Layout */
+.fds-section {
+  padding: 64px 0;
+}
+
+.fds-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin: 32px 0;
+}
+
+.fds-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.fds-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+/* Hero section */
+.fds-hero {
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--fds-bg) 0%, var(--fds-bg-alt) 100%);
+}
+
+.fds-hero h1 {
+  margin-bottom: 24px;
+}
+
+.fds-hero p {
+  font-size: 20px;
+  color: var(--fds-muted);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fds-hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Navigation */
+.site-header {
+  background-color: var(--fds-bg);
+  border-bottom: 1px solid var(--fds-border);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--fds-bg-alt);
+  border-top: 1px solid var(--fds-border);
+  color: var(--fds-muted);
+}
+
+/* Focus states for accessibility */
+*:focus {
+  outline: 2px solid var(--fds-accent);
+  outline-offset: 2px;
+}
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .fds-section {
+    padding: 48px 0;
+  }
+  
+  .fds-hero {
+    padding: 60px 0;
+  }
+  
+  .fds-hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fds-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* WordPress block editor compatibility */
+.wp-block-group {
+  background-color: transparent;
+}
+
+.wp-block-cover {
+  background-color: var(--fds-bg-alt);
+}
+
+.wp-block-columns {
+  gap: 32px;
+}

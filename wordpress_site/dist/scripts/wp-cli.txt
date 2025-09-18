@@ -1,0 +1,122 @@
+# WordPress CLI Commands for First Data Security Site Setup
+
+## Prerequisites
+# Ensure WP-CLI is installed and WordPress is accessible
+# Run these commands from the WordPress root directory
+
+## 1. Download and Install WordPress Core
+wp core download
+wp config create --dbname=fds_wordpress --dbuser=fds_wp_user --dbpass=YOUR_DB_PASSWORD --dbhost=localhost
+wp core install --url=https://firstdatasecurity.com --title="First Data Security" --admin_user=fdsadmin --admin_password=YOUR_ADMIN_PASSWORD --admin_email=admin@firstdatasecurity.com
+
+## 2. Install Essential Plugins
+wp plugin install wordfence --activate
+wp plugin install security-ninja --activate
+wp plugin install limit-login-attempts-reloaded --activate
+wp plugin install updraftplus --activate
+wp plugin install yoast-seo --activate
+wp plugin install contact-form-7 --activate
+wp plugin install w3-total-cache --activate
+
+## 3. Install and Activate Theme
+# Upload the theme files first, then:
+wp theme install /path/to/fds-theme.zip --activate
+wp theme activate fds-theme-child
+
+## 4. Import Demo Content
+wp import /path/to/fds-demo.xml --authors=create
+
+## 5. Configure WordPress Settings
+wp option update blogdescription "Turn SOC compliance into your fastest sales enabler"
+wp option update date_format "F j, Y"
+wp option update time_format "g:i a"
+wp option update start_of_week 1
+wp option update timezone_string "America/Los_Angeles"
+
+## 6. Set Permalink Structure
+wp rewrite structure '/%postname%/' --hard
+
+## 7. Create Navigation Menu
+wp menu create "Primary Menu"
+wp menu item add-post primary-menu 2 --title="Home"
+wp menu item add-post primary-menu 3 --title="Services"
+wp menu item add-post primary-menu 5 --title="About"
+wp menu item add-custom primary-menu "Case Studies" "/case-studies/"
+wp menu item add-custom primary-menu "Resources" "/resources/"
+wp menu item add-post primary-menu 4 --title="Contact"
+wp menu location assign primary-menu primary
+
+## 8. Configure Front Page
+wp option update show_on_front page
+wp option update page_on_front 2
+wp option update page_for_posts 6
+
+## 9. Security Hardening
+wp config set DISALLOW_FILE_EDIT true --type=constant
+wp config set FORCE_SSL_ADMIN true --type=constant
+wp config set WP_AUTO_UPDATE_CORE true --type=constant
+
+## 10. Remove Default Content
+wp post delete 1 --force  # Delete "Hello World" post
+wp post delete 2 --force  # Delete sample page (if exists)
+wp comment delete 1 --force  # Delete default comment
+
+## 11. Create Additional Pages (if needed)
+wp post create --post_type=page --post_title="Privacy Policy" --post_status=publish --post_content="[Privacy Policy content here]"
+wp post create --post_type=page --post_title="Terms of Service" --post_status=publish --post_content="[Terms of Service content here]"
+wp post create --post_type=page --post_title="Resources" --post_status=publish --post_content="[Resources page content here]"
+
+## 12. Configure Contact Form 7 (if used)
+# Create contact form with ID 1
+wp contact-form-7 create --title="Contact Form" --file="/path/to/contact-form-template.txt"
+
+## 13. SEO Configuration (Yoast)
+wp yoast index --reindex
+
+## 14. Create User Accounts
+wp user create editor editor@firstdatasecurity.com --role=editor --first_name="Site" --last_name="Editor"
+
+## 15. Flush Cache and Rewrite Rules
+wp cache flush
+wp rewrite flush
+
+## 16. Generate WordPress Salts (if needed)
+wp config shuffle-salts
+
+## 17. Database Optimization
+wp db optimize
+
+## 18. Verify Installation
+wp core verify-checksums
+wp plugin verify-checksums --all
+wp theme verify-checksums --all
+
+## 19. Set File Permissions (run as root or with sudo)
+find /var/www/firstdatasecurity.com/ -type d -exec chmod 755 {} \;
+find /var/www/firstdatasecurity.com/ -type f -exec chmod 644 {} \;
+chmod 600 /var/www/firstdatasecurity.com/wp-config.php
+
+## 20. Create Backup
+wp db export backup-$(date +%Y%m%d).sql
+tar -czf site-backup-$(date +%Y%m%d).tar.gz /var/www/firstdatasecurity.com/
+
+## Environment Variables to Set
+# DB_NAME=fds_wordpress
+# DB_USER=fds_wp_user
+# DB_PASSWORD=YOUR_DB_PASSWORD
+# DOMAIN=firstdatasecurity.com
+# ADMIN_EMAIL=admin@firstdatasecurity.com
+# ADMIN_USER=fdsadmin
+# ADMIN_PASSWORD=YOUR_ADMIN_PASSWORD
+
+## Post-Installation Checklist
+# [ ] Test all pages load correctly
+# [ ] Verify contact forms work
+# [ ] Check responsive design on mobile
+# [ ] Test admin login and functionality
+# [ ] Verify SSL certificate is working
+# [ ] Check security headers are set
+# [ ] Test backup restoration
+# [ ] Verify analytics tracking (if configured)
+# [ ] Test lead magnet downloads
+# [ ] Check site speed and performance

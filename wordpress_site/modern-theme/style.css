@@ -1,0 +1,701 @@
+/*
+Theme Name: FDS Modern - Serabrynn Inspired
+Description: Professional cybersecurity theme with Serabrynn-inspired design
+Version: 3.0
+Author: First Data Security
+*/
+
+/* Serabrynn-Inspired Design System */
+
+/* CSS Custom Properties */
+:root {
+  /* Serabrynn Color Palette */
+  --fds-primary: #E5C877;         /* Gold/Mustard */
+  --fds-primary-dark: #D4B962;    /* Darker gold */
+  --fds-primary-light: #F0D394;   /* Lighter gold */
+  --fds-secondary: #1A3556;       /* Dark navy blue */
+  --fds-black: #000000;           /* Pure black */
+  --fds-white: #FFFFFF;           /* Pure white */
+  
+  /* Typography - Montserrat Only */
+  --fds-font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Font Sizes - Serabrynn Scale */
+  --fds-text-sm: 14px;
+  --fds-text-base: 16px;
+  --fds-text-lg: 18px;           /* Navigation */
+  --fds-text-xl: 20px;
+  --fds-text-2xl: 24px;
+  --fds-text-3xl: 30px;          /* Body/Sections */
+  --fds-text-4xl: 38px;          /* Headings */
+  --fds-text-5xl: 48px;
+  --fds-text-6xl: 60px;
+  
+  /* Font Weights */
+  --fds-weight-normal: 400;
+  --fds-weight-semibold: 600;
+  --fds-weight-bold: 700;
+  
+  /* Layout */
+  --fds-max-width: 1400px;
+  
+  /* Spacing - Serabrynn Pattern */
+  --fds-space-xs: 10px;
+  --fds-space-sm: 20px;
+  --fds-space-md: 30px;
+  --fds-space-lg: 40px;
+  --fds-space-xl: 60px;
+  --fds-space-2xl: 80px;
+  --fds-space-3xl: 120px;
+  --fds-space-4xl: 160px;
+  --fds-space-5xl: 200px;
+  
+  /* Transitions */
+  --fds-transition: 300ms ease-in-out;
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--fds-font-primary);
+  font-size: var(--fds-text-3xl);
+  font-weight: var(--fds-weight-normal);
+  line-height: 1.6;
+  color: var(--fds-black);
+  background-color: var(--fds-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography - Serabrynn Style */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fds-font-primary);
+  font-weight: var(--fds-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--fds-space-md);
+}
+
+h1 { 
+  font-size: var(--fds-text-6xl); 
+  font-weight: var(--fds-weight-bold);
+}
+
+h2 { 
+  font-size: var(--fds-text-5xl); 
+  font-weight: var(--fds-weight-bold);
+}
+
+h3 { 
+  font-size: var(--fds-text-4xl); 
+  font-weight: var(--fds-weight-semibold);
+}
+
+h4 { 
+  font-size: var(--fds-text-3xl); 
+  font-weight: var(--fds-weight-semibold);
+}
+
+h5 { 
+  font-size: var(--fds-text-2xl); 
+  font-weight: var(--fds-weight-semibold);
+}
+
+h6 { 
+  font-size: var(--fds-text-xl); 
+  font-weight: var(--fds-weight-semibold);
+}
+
+p {
+  font-size: var(--fds-text-3xl);
+  font-weight: var(--fds-weight-normal);
+  line-height: 1.6;
+  margin-bottom: var(--fds-space-md);
+}
+
+/* Layout Container - Serabrynn Structure */
+.fds-container {
+  max-width: var(--fds-max-width);
+  margin: 0 auto;
+  padding: 0 var(--fds-space-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header - Serabrynn Style */
+.site-header {
+  background: var(--fds-white);
+  padding: var(--fds-space-lg) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(229, 200, 119, 0.2);
+}
+
+.header-content {
+  max-width: var(--fds-max-width);
+  margin: 0 auto;
+  padding: 0 var(--fds-space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo img {
+  height: 45px;
+  width: auto;
+}
+
+/* Navigation - Serabrynn Style */
+.main-navigation ul {
+  display: flex;
+  list-style: none;
+  gap: var(--fds-space-xl);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  font-family: var(--fds-font-primary);
+  font-size: var(--fds-text-lg);
+  font-weight: var(--fds-weight-semibold);
+  color: var(--fds-black);
+  text-decoration: none;
+  transition: var(--fds-transition);
+  padding: var(--fds-space-xs) var(--fds-space-sm);
+}
+
+.main-navigation a:hover {
+  color: var(--fds-primary);
+}
+
+/* Hero Section - Serabrynn Inspired */
+.fds-hero {
+  background: linear-gradient(135deg, var(--fds-black) 0%, var(--fds-secondary) 100%);
+  color: var(--fds-white);
+  padding: var(--fds-space-5xl) 0;
+  text-align: center;
+  position: relative;
+}
+
+.fds-hero h1 {
+  font-size: var(--fds-text-6xl);
+  font-weight: var(--fds-weight-bold);
+  color: var(--fds-white);
+  margin-bottom: var(--fds-space-lg);
+  line-height: 1.1;
+}
+
+.fds-hero-subtitle {
+  font-size: var(--fds-text-3xl);
+  font-weight: var(--fds-weight-normal);
+  color: var(--fds-white);
+  margin-bottom: var(--fds-space-2xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+/* Sections - Serabrynn Layout */
+.fds-section {
+  padding: var(--fds-space-4xl) 0;
+  position: relative;
+}
+
+.fds-section:nth-child(even) {
+  background: var(--fds-primary);
+  color: var(--fds-black);
+}
+
+.fds-section:nth-child(odd) {
+  background: var(--fds-white);
+  color: var(--fds-black);
+}
+
+.fds-section h2 {
+  font-size: var(--fds-text-4xl);
+  font-weight: var(--fds-weight-bold);
+  text-align: center;
+  margin-bottom: var(--fds-space-2xl);
+  color: inherit;
+}
+
+/* Grid System - Serabrynn Approach */
+.fds-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fds-space-xl);
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fds-grid-2 > * {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.fds-grid-3 > * {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.fds-grid-4 > * {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+/* Cards - Serabrynn Inspired */
+.fds-card {
+  background: var(--fds-white);
+  padding: var(--fds-space-xl);
+  text-align: center;
+  border: 2px solid var(--fds-primary);
+  transition: var(--fds-transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fds-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(229, 200, 119, 0.3);
+}
+
+.fds-card h3 {
+  font-size: var(--fds-text-3xl);
+  font-weight: var(--fds-weight-bold);
+  color: var(--fds-black);
+  margin-bottom: var(--fds-space-sm);
+}
+
+.fds-card p {
+  font-size: var(--fds-text-base);
+  color: var(--fds-black);
+  margin-bottom: var(--fds-space-lg);
+  flex-grow: 1;
+}
+
+/* Buttons - Serabrynn Style */
+.fds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--fds-space-sm) var(--fds-space-xl);
+  font-family: var(--fds-font-primary);
+  font-size: var(--fds-text-lg);
+  font-weight: var(--fds-weight-semibold);
+  text-decoration: none;
+  border: 2px solid;
+  transition: var(--fds-transition);
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.fds-btn-primary {
+  background: var(--fds-primary);
+  color: var(--fds-black);
+  border-color: var(--fds-primary);
+}
+
+.fds-btn-primary:hover {
+  background: var(--fds-primary-dark);
+  border-color: var(--fds-primary-dark);
+  transform: translateY(-2px);
+}
+
+.fds-btn-secondary {
+  background: transparent;
+  color: var(--fds-black);
+  border-color: var(--fds-black);
+}
+
+.fds-btn-secondary:hover {
+  background: var(--fds-black);
+  color: var(--fds-white);
+}
+
+.fds-btn-ghost {
+  background: transparent;
+  color: var(--fds-white);
+  border-color: var(--fds-white);
+}
+
+.fds-btn-ghost:hover {
+  background: var(--fds-white);
+  color: var(--fds-black);
+}
+
+/* Special Sections */
+.fds-bg-black {
+  background: var(--fds-black) !important;
+  color: var(--fds-white);
+}
+
+.fds-bg-black h2,
+.fds-bg-black h3,
+.fds-bg-black h4 {
+  color: var(--fds-white);
+}
+
+.fds-bg-black .fds-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--fds-primary);
+  color: var(--fds-white);
+}
+
+.fds-bg-black .fds-card h3,
+.fds-bg-black .fds-card p {
+  color: var(--fds-white);
+}
+
+/* Service Cards */
+.fds-service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.fds-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--fds-primary);
+}
+
+.fds-service-price {
+  background: var(--fds-primary);
+  color: var(--fds-black);
+  padding: var(--fds-space-xs) var(--fds-space-sm);
+  font-weight: var(--fds-weight-bold);
+  font-size: var(--fds-text-base);
+  display: inline-block;
+  margin-bottom: var(--fds-space-sm);
+}
+
+/* Icons - Serabrynn Style */
+.fds-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--fds-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--fds-space-sm);
+}
+
+/* Footer - Serabrynn Inspired */
+.site-footer {
+  background: var(--fds-black);
+  color: var(--fds-white);
+  padding: var(--fds-space-4xl) 0 var(--fds-space-xl);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fds-space-xl);
+  justify-content: center;
+  text-align: center;
+  margin-bottom: var(--fds-space-xl);
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h4 {
+  color: var(--fds-primary);
+  font-size: var(--fds-text-xl);
+  font-weight: var(--fds-weight-bold);
+  margin-bottom: var(--fds-space-sm);
+}
+
+.footer-section a {
+  color: var(--fds-white);
+  text-decoration: none;
+  transition: var(--fds-transition);
+}
+
+.footer-section a:hover {
+  color: var(--fds-primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--fds-primary);
+  padding-top: var(--fds-space-lg);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--fds-text-base);
+}
+
+/* Responsive Design - Serabrynn Breakpoints */
+@media (max-width: 768px) {
+  :root {
+    --fds-text-3xl: 20px;
+    --fds-text-4xl: 28px;
+    --fds-text-5xl: 36px;
+    --fds-text-6xl: 44px;
+  }
+  
+  .fds-container {
+    padding: 0 var(--fds-space-sm);
+  }
+  
+  .fds-section {
+    padding: var(--fds-space-2xl) 0;
+  }
+  
+  .fds-hero {
+    padding: var(--fds-space-3xl) 0;
+  }
+  
+  .main-navigation ul {
+    gap: var(--fds-space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .fds-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fds-grid > * {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: var(--fds-space-lg);
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+/* Animations - Subtle Serabrynn Style */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Calendly Overlay - Updated for Serabrynn Theme */
+.calendly-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--fds-transition);
+}
+
+.calendly-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.calendly-modal {
+  background: var(--fds-white);
+  border: 3px solid var(--fds-primary);
+  width: 90%;
+  max-width: 1000px;
+  height: 90%;
+  max-height: 800px;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  transition: var(--fds-transition);
+}
+
+.calendly-overlay.active .calendly-modal {
+  transform: scale(1) translateY(0);
+}
+
+.calendly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--fds-space-lg);
+  background: var(--fds-primary);
+  border-bottom: 2px solid var(--fds-black);
+}
+
+.calendly-title {
+  font-family: var(--fds-font-primary);
+  font-size: var(--fds-text-xl);
+  font-weight: var(--fds-weight-bold);
+  color: var(--fds-black);
+  margin: 0;
+}
+
+.calendly-close {
+  background: none;
+  border: 2px solid var(--fds-black);
+  font-size: var(--fds-text-2xl);
+  color: var(--fds-black);
+  cursor: pointer;
+  padding: var(--fds-space-xs);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fds-weight-bold);
+  transition: var(--fds-transition);
+}
+
+.calendly-close:hover {
+  background: var(--fds-black);
+  color: var(--fds-white);
+}
+
+.calendly-iframe-container {
+  height: calc(100% - 80px);
+  overflow: hidden;
+}
+
+.calendly-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.calendly-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--fds-space-sm);
+  color: var(--fds-black);
+  font-family: var(--fds-font-primary);
+  font-weight: var(--fds-weight-semibold);
+}
+
+.calendly-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(229, 200, 119, 0.3);
+  border-top: 3px solid var(--fds-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Lists - Serabrynn Style */
+ul, ol {
+  font-size: var(--fds-text-base);
+  line-height: 1.6;
+}
+
+ul[style*="list-style: none"] li {
+  margin-bottom: var(--fds-space-xs);
+}
+
+/* Blockquotes - Professional Style */
+blockquote {
+  border-left: 4px solid var(--fds-primary);
+  padding-left: var(--fds-space-lg);
+  font-style: italic;
+  margin: var(--fds-space-lg) 0;
+  font-size: var(--fds-text-base);
+}
+
+blockquote footer {
+  margin-top: var(--fds-space-sm);
+  font-weight: var(--fds-weight-semibold);
+  color: rgba(0, 0, 0, 0.7);
+  font-style: normal;
+}
+
+/* Form Elements - Serabrynn Inspired */
+input, select, textarea {
+  font-family: var(--fds-font-primary);
+  font-size: var(--fds-text-base);
+  padding: var(--fds-space-sm);
+  border: 2px solid var(--fds-black);
+  background: var(--fds-white);
+  transition: var(--fds-transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--fds-primary);
+  box-shadow: 0 0 0 3px rgba(229, 200, 119, 0.2);
+}
+
+label {
+  font-family: var(--fds-font-primary);
+  font-weight: var(--fds-weight-semibold);
+  color: var(--fds-black);
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .fds-btn,
+  .calendly-overlay {
+    display: none;
+  }
+  
+  .fds-hero,
+  .fds-section {
+    background: var(--fds-white) !important;
+    color: var(--fds-black) !important;
+  }
+  
+  .fds-card {
+    border: 1px solid var(--fds-black);
+    box-shadow: none;
+  }
+}

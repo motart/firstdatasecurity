@@ -1,0 +1,87 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0E1116"/>
+      <stop offset="50%" style="stop-color:#0F172A"/>
+      <stop offset="100%" style="stop-color:#0E1116"/>
+    </linearGradient>
+    <linearGradient id="overlayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#26C6DA;stop-opacity:0.1"/>
+      <stop offset="50%" style="stop-color:#10B981;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#26C6DA;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bgGradient)"/>
+  <rect width="1584" height="396" fill="url(#overlayGradient)"/>
+  
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.03">
+    <pattern id="gridPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="none" stroke="#26C6DA" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1584" height="396" fill="url(#gridPattern)"/>
+  </g>
+  
+  <!-- Logo (positioned left) -->
+  <g transform="translate(100, 120)">
+    <!-- Shield Base -->
+    <path d="M40 12 L56 16 L56 36 C56 50 48 60 40 68 C32 60 24 50 24 36 L24 16 Z" 
+          fill="#0F172A" 
+          stroke="#26C6DA" 
+          stroke-width="2"/>
+    
+    <!-- Digital Grid Pattern -->
+    <g opacity="0.8">
+      <rect x="28" y="20" width="4" height="4" fill="#26C6DA"/>
+      <rect x="34" y="20" width="4" height="4" fill="#10B981"/>
+      <rect x="40" y="20" width="4" height="4" fill="#26C6DA"/>
+      <rect x="46" y="20" width="4" height="4" fill="#10B981"/>
+      
+      <rect x="30" y="26" width="4" height="4" fill="#10B981"/>
+      <rect x="36" y="26" width="4" height="4" fill="#26C6DA"/>
+      <rect x="42" y="26" width="4" height="4" fill="#10B981"/>
+      <rect x="48" y="26" width="4" height="4" fill="#26C6DA"/>
+      
+      <rect x="28" y="32" width="4" height="4" fill="#26C6DA"/>
+      <rect x="34" y="32" width="4" height="4" fill="#10B981"/>
+      <rect x="40" y="32" width="4" height="4" fill="#26C6DA"/>
+      <rect x="46" y="32" width="4" height="4" fill="#10B981"/>
+      
+      <rect x="30" y="38" width="4" height="4" fill="#10B981"/>
+      <rect x="36" y="38" width="4" height="4" fill="#26C6DA"/>
+      <rect x="42" y="38" width="4" height="4" fill="#10B981"/>
+      <rect x="48" y="38" width="4" height="4" fill="#26C6DA"/>
+    </g>
+    
+    <!-- Governance Checkmark -->
+    <path d="M33 40 L38 45 L47 36" 
+          stroke="#10B981" 
+          stroke-width="3" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+          
+    <!-- Company Name -->
+    <g font-family="Inter, sans-serif" fill="#F8FAFC">
+      <text x="90" y="45" font-weight="700" font-size="32">First Data Security</text>
+    </g>
+  </g>
+  
+  <!-- Tagline (centered, larger) -->
+  <g font-family="Inter, sans-serif" fill="#26C6DA" text-anchor="middle">
+    <text x="792" y="280" font-weight="400" font-size="36">Govern • Engineer • Authorize</text>
+  </g>
+  
+  <!-- Subtle decorative elements -->
+  <g opacity="0.2">
+    <!-- Left accent -->
+    <rect x="0" y="0" width="4" height="396" fill="#26C6DA"/>
+    <!-- Right accent -->
+    <rect x="1580" y="0" width="4" height="396" fill="#10B981"/>
+    <!-- Bottom accent line -->
+    <rect x="0" y="392" width="1584" height="4" fill="url(#overlayGradient)"/>
+  </g>
+</svg>

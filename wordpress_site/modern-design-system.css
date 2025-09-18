@@ -1,0 +1,652 @@
+/* 
+ * First Data Security - Modern UI/UX Design System
+ * Advanced CSS framework for stunning visual experience
+ */
+
+/* Import Google Fonts for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* CSS Custom Properties - Extended Design Tokens */
+:root {
+  /* Color System - Modern Palette */
+  --fds-primary: #0ea5e9;
+  --fds-primary-light: #38bdf8;
+  --fds-primary-dark: #0284c7;
+  --fds-secondary: #06b6d4;
+  --fds-secondary-light: #22d3ee;
+  --fds-accent: #10b981;
+  --fds-accent-light: #34d399;
+  --fds-accent-dark: #059669;
+  
+  /* Neutral Colors */
+  --fds-gray-50: #f8fafc;
+  --fds-gray-100: #f1f5f9;
+  --fds-gray-200: #e2e8f0;
+  --fds-gray-300: #cbd5e1;
+  --fds-gray-400: #94a3b8;
+  --fds-gray-500: #64748b;
+  --fds-gray-600: #475569;
+  --fds-gray-700: #334155;
+  --fds-gray-800: #1e293b;
+  --fds-gray-900: #0f172a;
+  
+  /* Dark Theme Colors */
+  --fds-bg: #020617;
+  --fds-bg-alt: #0f172a;
+  --fds-bg-card: #1e293b;
+  --fds-bg-elevated: #334155;
+  --fds-fg: #f8fafc;
+  --fds-fg-muted: #cbd5e1;
+  --fds-border: #334155;
+  --fds-border-light: #475569;
+  
+  /* Typography Scale */
+  --fds-text-xs: 0.75rem;      /* 12px */
+  --fds-text-sm: 0.875rem;     /* 14px */
+  --fds-text-base: 1rem;       /* 16px */
+  --fds-text-lg: 1.125rem;     /* 18px */
+  --fds-text-xl: 1.25rem;      /* 20px */
+  --fds-text-2xl: 1.5rem;      /* 24px */
+  --fds-text-3xl: 1.875rem;    /* 30px */
+  --fds-text-4xl: 2.25rem;     /* 36px */
+  --fds-text-5xl: 3rem;        /* 48px */
+  --fds-text-6xl: 3.75rem;     /* 60px */
+  
+  /* Spacing Scale */
+  --fds-space-1: 0.25rem;   /* 4px */
+  --fds-space-2: 0.5rem;    /* 8px */
+  --fds-space-3: 0.75rem;   /* 12px */
+  --fds-space-4: 1rem;      /* 16px */
+  --fds-space-5: 1.25rem;   /* 20px */
+  --fds-space-6: 1.5rem;    /* 24px */
+  --fds-space-8: 2rem;      /* 32px */
+  --fds-space-10: 2.5rem;   /* 40px */
+  --fds-space-12: 3rem;     /* 48px */
+  --fds-space-16: 4rem;     /* 64px */
+  --fds-space-20: 5rem;     /* 80px */
+  --fds-space-24: 6rem;     /* 96px */
+  --fds-space-32: 8rem;     /* 128px */
+  
+  /* Border Radius */
+  --fds-radius-sm: 0.25rem;
+  --fds-radius: 0.5rem;
+  --fds-radius-md: 0.75rem;
+  --fds-radius-lg: 1rem;
+  --fds-radius-xl: 1.5rem;
+  --fds-radius-2xl: 2rem;
+  --fds-radius-full: 9999px;
+  
+  /* Shadows */
+  --fds-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --fds-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --fds-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --fds-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --fds-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --fds-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Glow Effects */
+  --fds-glow-primary: 0 0 20px rgb(14 165 233 / 0.3);
+  --fds-glow-accent: 0 0 20px rgb(16 185 129 / 0.3);
+  
+  /* Transitions */
+  --fds-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fds-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fds-transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background: linear-gradient(135deg, var(--fds-bg) 0%, var(--fds-bg-alt) 100%) !important;
+  color: var(--fds-fg) !important;
+  font-size: var(--fds-text-lg) !important;
+  line-height: 1.7 !important;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--fds-fg) !important;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--fds-space-4);
+}
+
+h1 {
+  font-size: var(--fds-text-5xl) !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, var(--fds-primary-light), var(--fds-secondary)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+h2 {
+  font-size: var(--fds-text-4xl) !important;
+  color: var(--fds-fg) !important;
+}
+
+h3 {
+  font-size: var(--fds-text-2xl) !important;
+  color: var(--fds-primary-light) !important;
+}
+
+p {
+  font-size: var(--fds-text-lg) !important;
+  line-height: 1.8 !important;
+  color: var(--fds-fg-muted) !important;
+  margin-bottom: var(--fds-space-4);
+}
+
+/* Modern Header */
+.site-header, 
+header,
+.ct-header {
+  background: rgba(2, 6, 23, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--fds-border) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  transition: all var(--fds-transition) !important;
+}
+
+.site-header:hover,
+.ct-header:hover {
+  background: rgba(2, 6, 23, 0.95) !important;
+  box-shadow: var(--fds-shadow-lg) !important;
+}
+
+/* Logo Styling */
+.site-logo img,
+.custom-logo {
+  height: 48px !important;
+  width: auto !important;
+  transition: all var(--fds-transition) !important;
+  filter: drop-shadow(var(--fds-glow-primary));
+}
+
+.site-logo:hover img,
+.custom-logo:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(var(--fds-glow-primary)) drop-shadow(0 0 10px rgba(14, 165, 233, 0.5)) !important;
+}
+
+/* Navigation */
+nav a {
+  color: var(--fds-fg-muted) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  position: relative !important;
+  padding: var(--fds-space-2) var(--fds-space-4) !important;
+  border-radius: var(--fds-radius) !important;
+  transition: all var(--fds-transition) !important;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fds-primary), var(--fds-secondary));
+  transition: all var(--fds-transition);
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: var(--fds-primary-light) !important;
+  background: rgba(14, 165, 233, 0.1) !important;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+/* Hero Section - Stunning Visual Impact */
+.fds-hero {
+  background: radial-gradient(ellipse at top, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+              linear-gradient(135deg, var(--fds-bg) 0%, var(--fds-bg-alt) 100%) !important;
+  padding: var(--fds-space-32) 0 !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fds-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.03'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.fds-hero h1 {
+  font-size: var(--fds-text-6xl) !important;
+  font-weight: 900 !important;
+  margin-bottom: var(--fds-space-6) !important;
+  text-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+}
+
+.fds-hero p {
+  font-size: var(--fds-text-xl) !important;
+  color: var(--fds-gray-300) !important;
+  max-width: 42rem !important;
+  margin: 0 auto var(--fds-space-10) auto !important;
+  line-height: 1.6 !important;
+}
+
+/* Modern Button System */
+.wp-block-button__link,
+.btn-primary,
+a.wp-element-button,
+button {
+  background: linear-gradient(135deg, var(--fds-primary), var(--fds-secondary)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--fds-radius-lg) !important;
+  padding: var(--fds-space-4) var(--fds-space-8) !important;
+  font-weight: 600 !important;
+  font-size: var(--fds-text-base) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--fds-space-2) !important;
+  transition: all var(--fds-transition) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: var(--fds-shadow-md) !important;
+  cursor: pointer !important;
+}
+
+.wp-block-button__link::before,
+.btn-primary::before,
+a.wp-element-button::before,
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--fds-transition-slow);
+}
+
+.wp-block-button__link:hover,
+.btn-primary:hover,
+a.wp-element-button:hover,
+button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--fds-shadow-xl), var(--fds-glow-primary) !important;
+  background: linear-gradient(135deg, var(--fds-primary-dark), var(--fds-secondary)) !important;
+}
+
+.wp-block-button__link:hover::before,
+.btn-primary:hover::before,
+a.wp-element-button:hover::before,
+button:hover::before {
+  left: 100%;
+}
+
+/* Secondary Button Style */
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background: transparent !important;
+  color: var(--fds-primary-light) !important;
+  border: 2px solid var(--fds-primary) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background: var(--fds-primary) !important;
+  color: white !important;
+  border-color: var(--fds-primary-light) !important;
+}
+
+/* Cards - Glass Morphism Effect */
+.fds-card {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(71, 85, 105, 0.3) !important;
+  border-radius: var(--fds-radius-xl) !important;
+  padding: var(--fds-space-8) !important;
+  box-shadow: var(--fds-shadow-lg) !important;
+  transition: all var(--fds-transition) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fds-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--fds-primary-light), transparent);
+  opacity: 0;
+  transition: opacity var(--fds-transition);
+}
+
+.fds-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--fds-shadow-2xl), var(--fds-glow-primary) !important;
+  border-color: rgba(14, 165, 233, 0.5) !important;
+  background: rgba(30, 41, 59, 0.9) !important;
+}
+
+.fds-card:hover::before {
+  opacity: 1;
+}
+
+/* Grid Layouts with Enhanced Spacing */
+.fds-grid-2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: var(--fds-space-8) !important;
+  margin: var(--fds-space-16) 0 !important;
+}
+
+.fds-grid-3 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: var(--fds-space-6) !important;
+  margin: var(--fds-space-12) 0 !important;
+}
+
+.fds-grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: var(--fds-space-8) !important;
+  margin: var(--fds-space-16) 0 !important;
+}
+
+/* Sections with Improved Spacing */
+.fds-section {
+  padding: var(--fds-space-24) 0 !important;
+  position: relative !important;
+}
+
+/* Container Widths */
+.wp-block-group,
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 var(--fds-space-6) !important;
+}
+
+/* Tables - Modern Styling */
+.wp-block-table {
+  background: var(--fds-bg-card) !important;
+  border-radius: var(--fds-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--fds-shadow-md) !important;
+}
+
+.wp-block-table table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  background: transparent !important;
+}
+
+.wp-block-table th {
+  background: var(--fds-bg-elevated) !important;
+  color: var(--fds-fg) !important;
+  font-weight: 600 !important;
+  padding: var(--fds-space-4) var(--fds-space-6) !important;
+  border: none !important;
+  text-align: left !important;
+}
+
+.wp-block-table td {
+  color: var(--fds-fg-muted) !important;
+  padding: var(--fds-space-4) var(--fds-space-6) !important;
+  border-bottom: 1px solid var(--fds-border) !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.wp-block-table tr:hover td {
+  background: rgba(14, 165, 233, 0.05) !important;
+}
+
+/* FAQ/Details - Accordion Style */
+.wp-block-details {
+  background: var(--fds-bg-card) !important;
+  border: 1px solid var(--fds-border) !important;
+  border-radius: var(--fds-radius-lg) !important;
+  margin-bottom: var(--fds-space-4) !important;
+  overflow: hidden !important;
+  transition: all var(--fds-transition) !important;
+}
+
+.wp-block-details:hover {
+  border-color: var(--fds-primary) !important;
+  box-shadow: var(--fds-shadow-md) !important;
+}
+
+.wp-block-details summary {
+  background: var(--fds-bg-elevated) !important;
+  color: var(--fds-fg) !important;
+  padding: var(--fds-space-5) var(--fds-space-6) !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  transition: all var(--fds-transition) !important;
+  position: relative !important;
+}
+
+.wp-block-details summary:hover {
+  background: var(--fds-bg-card) !important;
+  color: var(--fds-primary-light) !important;
+}
+
+.wp-block-details[open] summary {
+  border-bottom: 1px solid var(--fds-border) !important;
+  background: var(--fds-primary) !important;
+  color: white !important;
+}
+
+.wp-block-details p {
+  padding: var(--fds-space-6) !important;
+  margin: 0 !important;
+  background: var(--fds-bg-card) !important;
+}
+
+/* Quotes - Enhanced Styling */
+.wp-block-quote {
+  background: var(--fds-bg-card) !important;
+  border-left: 4px solid var(--fds-primary) !important;
+  border-radius: var(--fds-radius) !important;
+  padding: var(--fds-space-6) !important;
+  margin: var(--fds-space-6) 0 !important;
+  position: relative !important;
+  box-shadow: var(--fds-shadow) !important;
+}
+
+.wp-block-quote::before {
+  content: '"';
+  position: absolute;
+  top: var(--fds-space-2);
+  left: var(--fds-space-4);
+  font-size: var(--fds-text-4xl);
+  color: var(--fds-primary);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.wp-block-quote p {
+  font-style: italic !important;
+  font-size: var(--fds-text-lg) !important;
+  margin-bottom: var(--fds-space-4) !important;
+  padding-left: var(--fds-space-6) !important;
+}
+
+.wp-block-quote cite {
+  color: var(--fds-primary-light) !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  font-size: var(--fds-text-sm) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Footer */
+.site-footer,
+footer {
+  background: var(--fds-bg-alt) !important;
+  border-top: 1px solid var(--fds-border) !important;
+  padding: var(--fds-space-16) 0 var(--fds-space-8) 0 !important;
+  margin-top: var(--fds-space-24) !important;
+}
+
+/* Lists */
+ul, ol {
+  color: var(--fds-fg-muted) !important;
+  padding-left: var(--fds-space-6) !important;
+}
+
+li {
+  margin-bottom: var(--fds-space-2) !important;
+  line-height: 1.7 !important;
+}
+
+/* Links */
+a {
+  color: var(--fds-primary-light) !important;
+  text-decoration: none !important;
+  transition: all var(--fds-transition-fast) !important;
+}
+
+a:hover {
+  color: var(--fds-secondary) !important;
+  text-decoration: underline !important;
+}
+
+/* Separators */
+.wp-block-separator,
+hr {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, var(--fds-border), transparent) !important;
+  margin: var(--fds-space-12) 0 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --fds-text-5xl: 2.5rem;
+    --fds-text-6xl: 3rem;
+  }
+  
+  .fds-hero {
+    padding: var(--fds-space-20) 0 !important;
+  }
+  
+  .fds-section {
+    padding: var(--fds-space-16) 0 !important;
+  }
+  
+  .fds-card {
+    padding: var(--fds-space-6) !important;
+  }
+  
+  .wp-block-group,
+  .container {
+    padding: 0 var(--fds-space-4) !important;
+  }
+  
+  .fds-grid-4,
+  .fds-grid-3,
+  .fds-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--fds-space-6) !important;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fds-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fds-border);
+  border-radius: var(--fds-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fds-primary);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glow Animation for Interactive Elements */
+@keyframes glow {
+  0%, 100% { box-shadow: var(--fds-shadow-lg); }
+  50% { box-shadow: var(--fds-shadow-lg), var(--fds-glow-primary); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,286 @@
+/* First Data Security Custom Styles */
+
+/* CSS Custom Properties */
+:root {
+  --fds-primary: #1ba3c7;
+  --fds-secondary: #26C6DA;
+  --fds-accent: #10B981;
+  --fds-bg: #0E1116;
+  --fds-bg-alt: #0F172A;
+  --fds-fg: #F8FAFC;
+  --fds-muted: #94A3B8;
+  --fds-card: #111827;
+  --fds-border: #1F2937;
+  --fds-link: #7DD3FC;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--fds-bg) !important;
+  color: var(--fds-fg) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 700;
+  color: var(--fds-fg) !important;
+}
+
+h1 { font-size: 48px; line-height: 1.17; }
+h2 { font-size: 32px; line-height: 1.25; }
+h3 { font-size: 22px; line-height: 1.36; }
+
+p {
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--fds-fg) !important;
+}
+
+/* Site Header */
+.site-header, 
+header,
+.ct-header {
+  background-color: var(--fds-bg) !important;
+  border-bottom: 1px solid var(--fds-border) !important;
+}
+
+/* Logo Implementation */
+.site-logo a,
+.custom-logo-link {
+  display: inline-block !important;
+}
+
+/* Replace default logo with FDS horizontal logo */
+.site-logo img,
+.custom-logo {
+  content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCA0MCA0MDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGlkPSJzaGllbGQtaWNvbiI+CiAgICA8cGF0aCBkPSJNNTAgMTUgTDcwIDIwIEw3MCA0MCBDNTI1OCA2MCA3MCA1MCA4MCBDNDA3MCAzMCA1OCAzMCA0MCBMM==') !important;
+  width: auto !important;
+  height: 50px !important;
+  max-height: 50px !important;
+}
+
+/* Navigation */
+.site-header nav a,
+.ct-header nav a,
+nav a {
+  color: var(--fds-fg) !important;
+  text-decoration: none !important;
+}
+
+.site-header nav a:hover,
+.ct-header nav a:hover,
+nav a:hover {
+  color: var(--fds-primary) !important;
+}
+
+/* Buttons */
+.wp-block-button__link,
+.btn-primary,
+a.wp-element-button {
+  background-color: var(--fds-primary) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  padding: 14px 28px !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.wp-block-button__link:hover,
+.btn-primary:hover,
+a.wp-element-button:hover {
+  background-color: var(--fds-secondary) !important;
+  transform: translateY(-1px) !important;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+/* Cards */
+.fds-card {
+  background-color: var(--fds-card) !important;
+  border: 1px solid var(--fds-border) !important;
+  border-radius: 16px !important;
+  padding: 32px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fds-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Layout Sections */
+.fds-section {
+  padding: 64px 0 !important;
+}
+
+.fds-hero {
+  text-align: center !important;
+  padding: 80px 0 !important;
+  background: linear-gradient(135deg, var(--fds-bg) 0%, var(--fds-bg-alt) 100%) !important;
+}
+
+.fds-hero h1 {
+  margin-bottom: 24px !important;
+  font-size: 48px !important;
+}
+
+.fds-hero p {
+  font-size: 20px !important;
+  color: var(--fds-muted) !important;
+  margin-bottom: 32px !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Grid Layouts */
+.fds-grid-2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 32px !important;
+  margin: 32px 0 !important;
+}
+
+.fds-grid-3 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 24px !important;
+  margin: 32px 0 !important;
+}
+
+.fds-grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 24px !important;
+  margin: 32px 0 !important;
+}
+
+/* Content Blocks */
+.wp-block-group {
+  background-color: transparent !important;
+}
+
+.wp-block-columns {
+  gap: 32px !important;
+}
+
+.wp-block-quote {
+  border-left: 4px solid var(--fds-primary) !important;
+  padding-left: 20px !important;
+  color: var(--fds-fg) !important;
+}
+
+.wp-block-quote cite {
+  color: var(--fds-muted) !important;
+}
+
+/* Tables */
+.wp-block-table table {
+  background-color: var(--fds-card) !important;
+  border-collapse: collapse !important;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+  border: 1px solid var(--fds-border) !important;
+  padding: 12px !important;
+  color: var(--fds-fg) !important;
+}
+
+.wp-block-table th {
+  background-color: var(--fds-bg-alt) !important;
+  font-weight: 600 !important;
+}
+
+/* Details/FAQ */
+.wp-block-details {
+  background-color: var(--fds-card) !important;
+  border: 1px solid var(--fds-border) !important;
+  border-radius: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+.wp-block-details summary {
+  padding: 16px !important;
+  color: var(--fds-fg) !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+}
+
+.wp-block-details[open] summary {
+  border-bottom: 1px solid var(--fds-border) !important;
+}
+
+.wp-block-details p {
+  padding: 16px !important;
+  margin: 0 !important;
+}
+
+/* Footer */
+.site-footer,
+footer {
+  background-color: var(--fds-bg-alt) !important;
+  border-top: 1px solid var(--fds-border) !important;
+  color: var(--fds-muted) !important;
+  padding: 40px 0 !important;
+}
+
+.site-footer a,
+footer a {
+  color: var(--fds-link) !important;
+}
+
+/* Focus States for Accessibility */
+*:focus {
+  outline: 2px solid var(--fds-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 { font-size: 36px !important; }
+  h2 { font-size: 28px !important; }
+  
+  .fds-section { padding: 48px 0 !important; }
+  .fds-hero { padding: 60px 0 !important; }
+  
+  .fds-grid-4 { grid-template-columns: 1fr !important; }
+  
+  .site-logo img,
+  .custom-logo {
+    height: 40px !important;
+    max-height: 40px !important;
+  }
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Color Classes for Block Editor */
+.has-fds-primary-color { color: var(--fds-primary) !important; }
+.has-fds-primary-background-color { background-color: var(--fds-primary) !important; }
+.has-fds-secondary-color { color: var(--fds-secondary) !important; }
+.has-fds-secondary-background-color { background-color: var(--fds-secondary) !important; }
+.has-fds-accent-color { color: var(--fds-accent) !important; }
+.has-fds-accent-background-color { background-color: var(--fds-accent) !important; }
+.has-fds-bg-color { color: var(--fds-bg) !important; }
+.has-fds-bg-background-color { background-color: var(--fds-bg) !important; }
+.has-fds-bg-alt-color { color: var(--fds-bg-alt) !important; }
+.has-fds-bg-alt-background-color { background-color: var(--fds-bg-alt) !important; }
+.has-fds-fg-color { color: var(--fds-fg) !important; }
+.has-fds-fg-background-color { background-color: var(--fds-fg) !important; }

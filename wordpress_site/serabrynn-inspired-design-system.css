@@ -1,0 +1,617 @@
+/*
+ * First Data Security - Serabrynn-Inspired Design System
+ * Clean, sophisticated cybersecurity consulting aesthetic
+ */
+
+/* Import Typography */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Design System Variables */
+:root {
+  /* Serabrynn-Inspired Colors */
+  --fds-black: #000000;
+  --fds-white: #ffffff;
+  --fds-gold: #E5C877;
+  --fds-gold-light: #F0D894;
+  --fds-gold-dark: #D4B660;
+  
+  /* Extended Palette */
+  --fds-gray-50: #fafafa;
+  --fds-gray-100: #f5f5f5;
+  --fds-gray-200: #e5e5e5;
+  --fds-gray-300: #d4d4d4;
+  --fds-gray-400: #a3a3a3;
+  --fds-gray-500: #737373;
+  --fds-gray-600: #525252;
+  --fds-gray-700: #404040;
+  --fds-gray-800: #262626;
+  --fds-gray-900: #171717;
+  
+  /* Federal Colors for Accents */
+  --fds-blue: #1e40af;
+  --fds-blue-light: #3b82f6;
+  --fds-green: #16a34a;
+  --fds-red: #dc2626;
+  
+  /* Typography */
+  --fds-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Font Sizes (matching serabrynn scale) */
+  --fds-text-xs: 0.75rem;    /* 12px */
+  --fds-text-sm: 0.875rem;   /* 14px */
+  --fds-text-base: 1rem;     /* 16px */
+  --fds-text-lg: 1.125rem;   /* 18px */
+  --fds-text-xl: 1.25rem;    /* 20px */
+  --fds-text-2xl: 1.5rem;    /* 24px */
+  --fds-text-3xl: 1.875rem;  /* 30px */
+  --fds-text-4xl: 2.375rem;  /* 38px - matching serabrynn */
+  --fds-text-5xl: 3rem;      /* 48px */
+  --fds-text-6xl: 3.75rem;   /* 60px */
+  
+  /* Font Weights */
+  --fds-font-light: 300;
+  --fds-font-normal: 400;
+  --fds-font-medium: 500;
+  --fds-font-semibold: 600;
+  --fds-font-bold: 700;
+  --fds-font-extrabold: 800;
+  
+  /* Spacing System */
+  --fds-space-1: 0.25rem;   /* 4px */
+  --fds-space-2: 0.5rem;    /* 8px */
+  --fds-space-3: 0.75rem;   /* 12px */
+  --fds-space-4: 1rem;      /* 16px */
+  --fds-space-5: 1.25rem;   /* 20px */
+  --fds-space-6: 1.5rem;    /* 24px */
+  --fds-space-8: 2rem;      /* 32px */
+  --fds-space-10: 2.5rem;   /* 40px */
+  --fds-space-12: 3rem;     /* 48px */
+  --fds-space-16: 4rem;     /* 64px */
+  --fds-space-20: 5rem;     /* 80px */
+  --fds-space-24: 6rem;     /* 96px */
+  --fds-space-32: 8rem;     /* 128px */
+  
+  /* Layout */
+  --fds-max-width: 1400px;  /* Matching serabrynn */
+  --fds-container-padding: 1.5rem;
+  
+  /* Shadows */
+  --fds-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --fds-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --fds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --fds-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --fds-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transitions */
+  --fds-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --fds-transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fds-font-family) !important;
+  font-size: var(--fds-text-base) !important;
+  font-weight: var(--fds-font-normal) !important;
+  line-height: 1.6 !important;
+  color: var(--fds-black) !important;
+  background-color: var(--fds-white) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fds-font-family) !important;
+  font-weight: var(--fds-font-bold) !important;
+  line-height: 1.2 !important;
+  color: var(--fds-black) !important;
+  margin-bottom: var(--fds-space-4);
+}
+
+h1 {
+  font-size: var(--fds-text-5xl) !important;
+  font-weight: var(--fds-font-extrabold) !important;
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+h2 {
+  font-size: var(--fds-text-4xl) !important; /* 38px like serabrynn */
+  font-weight: var(--fds-font-bold) !important;
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+h3 {
+  font-size: var(--fds-text-3xl) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  margin-bottom: var(--fds-space-4) !important;
+}
+
+h4 {
+  font-size: var(--fds-text-2xl) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  margin-bottom: var(--fds-space-4) !important;
+}
+
+p {
+  font-size: var(--fds-text-lg) !important;
+  line-height: 1.7 !important;
+  color: var(--fds-gray-700) !important;
+  margin-bottom: var(--fds-space-6);
+}
+
+.lead-text {
+  font-size: var(--fds-text-xl) !important;
+  color: var(--fds-gray-600) !important;
+  font-weight: var(--fds-font-normal) !important;
+}
+
+/* Layout Components */
+.fds-container {
+  max-width: var(--fds-max-width) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--fds-container-padding) !important;
+}
+
+.fds-section {
+  padding: var(--fds-space-20) 0 !important;
+}
+
+.fds-section-lg {
+  padding: var(--fds-space-32) 0 !important;
+}
+
+/* Header */
+.fds-header {
+  background: var(--fds-white) !important;
+  border-bottom: 1px solid var(--fds-gray-200) !important;
+  padding: var(--fds-space-6) 0 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  transition: var(--fds-transition) !important;
+}
+
+.fds-header.scrolled {
+  box-shadow: var(--fds-shadow-md) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.fds-header-content {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.fds-logo img {
+  height: 40px !important;
+  width: auto !important;
+  transition: var(--fds-transition) !important;
+}
+
+/* Navigation */
+.fds-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--fds-space-8) !important;
+}
+
+.fds-nav a {
+  color: var(--fds-black) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  text-decoration: none !important;
+  font-size: var(--fds-text-base) !important;
+  transition: var(--fds-transition-fast) !important;
+  position: relative !important;
+}
+
+.fds-nav a:hover {
+  color: var(--fds-gold) !important;
+}
+
+.fds-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--fds-gold);
+}
+
+/* Hero Section - Serabrynn Style */
+.fds-hero {
+  background: var(--fds-white) !important;
+  padding: var(--fds-space-32) 0 !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+.fds-hero-content {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.fds-hero h1 {
+  font-size: var(--fds-text-6xl) !important;
+  font-weight: var(--fds-font-extrabold) !important;
+  color: var(--fds-black) !important;
+  margin-bottom: var(--fds-space-8) !important;
+  line-height: 1.1 !important;
+}
+
+.fds-hero .lead-text {
+  font-size: var(--fds-text-xl) !important;
+  color: var(--fds-gray-600) !important;
+  max-width: 600px !important;
+  margin: 0 auto var(--fds-space-12) auto !important;
+}
+
+.fds-hero-cta {
+  display: flex !important;
+  justify-content: center !important;
+  gap: var(--fds-space-6) !important;
+  flex-wrap: wrap !important;
+}
+
+/* Buttons - Clean Serabrynn Style */
+.fds-btn {
+  display: inline-block !important;
+  font-family: var(--fds-font-family) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  font-size: var(--fds-text-base) !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  transition: var(--fds-transition) !important;
+  padding: var(--fds-space-4) var(--fds-space-8) !important;
+  line-height: 1 !important;
+}
+
+.fds-btn-primary {
+  background: var(--fds-black) !important;
+  color: var(--fds-white) !important;
+}
+
+.fds-btn-primary:hover {
+  background: var(--fds-gold) !important;
+  color: var(--fds-black) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--fds-shadow-lg) !important;
+}
+
+.fds-btn-secondary {
+  background: transparent !important;
+  color: var(--fds-black) !important;
+  border: 2px solid var(--fds-black) !important;
+}
+
+.fds-btn-secondary:hover {
+  background: var(--fds-black) !important;
+  color: var(--fds-white) !important;
+}
+
+.fds-btn-gold {
+  background: var(--fds-gold) !important;
+  color: var(--fds-black) !important;
+}
+
+.fds-btn-gold:hover {
+  background: var(--fds-gold-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--fds-shadow-lg) !important;
+}
+
+/* Alternating Sections - Serabrynn Style */
+.fds-section-alt {
+  background: var(--fds-gray-50) !important;
+}
+
+.fds-section-dark {
+  background: var(--fds-black) !important;
+  color: var(--fds-white) !important;
+}
+
+.fds-section-dark h1,
+.fds-section-dark h2,
+.fds-section-dark h3,
+.fds-section-dark h4 {
+  color: var(--fds-white) !important;
+}
+
+.fds-section-dark p {
+  color: var(--fds-gray-300) !important;
+}
+
+/* Section Headers */
+.fds-section-header {
+  text-align: center !important;
+  margin-bottom: var(--fds-space-16) !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.fds-section-header h2 {
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+.fds-section-subtitle {
+  font-size: var(--fds-text-lg) !important;
+  color: var(--fds-gray-600) !important;
+  font-weight: var(--fds-font-normal) !important;
+}
+
+/* Grid Systems */
+.fds-grid {
+  display: grid !important;
+  gap: var(--fds-space-8) !important;
+}
+
+.fds-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+}
+
+.fds-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+}
+
+.fds-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+/* Cards - Clean Serabrynn Style */
+.fds-card {
+  background: var(--fds-white) !important;
+  padding: var(--fds-space-10) !important;
+  transition: var(--fds-transition) !important;
+  border: 1px solid var(--fds-gray-200) !important;
+  position: relative !important;
+}
+
+.fds-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--fds-shadow-xl) !important;
+  border-color: var(--fds-gold) !important;
+}
+
+.fds-card-icon {
+  width: 80px !important;
+  height: 80px !important;
+  background: var(--fds-gold) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto var(--fds-space-6) auto !important;
+  font-size: var(--fds-text-3xl) !important;
+}
+
+.fds-card h3 {
+  text-align: center !important;
+  margin-bottom: var(--fds-space-4) !important;
+}
+
+.fds-card p {
+  text-align: center !important;
+  line-height: 1.7 !important;
+}
+
+/* Service Cards */
+.fds-service-card {
+  background: var(--fds-white) !important;
+  border: 1px solid var(--fds-gray-200) !important;
+  padding: var(--fds-space-10) !important;
+  transition: var(--fds-transition) !important;
+  text-align: center !important;
+}
+
+.fds-service-card:hover {
+  border-color: var(--fds-gold) !important;
+  box-shadow: var(--fds-shadow-lg) !important;
+  transform: translateY(-2px) !important;
+}
+
+.fds-service-price {
+  font-size: var(--fds-text-4xl) !important;
+  font-weight: var(--fds-font-extrabold) !important;
+  color: var(--fds-gold) !important;
+  margin-bottom: var(--fds-space-2) !important;
+}
+
+.fds-service-timeline {
+  color: var(--fds-gray-500) !important;
+  font-size: var(--fds-text-sm) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+.fds-service-features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: var(--fds-space-8) 0 !important;
+}
+
+.fds-service-features li {
+  padding: var(--fds-space-3) 0 !important;
+  border-bottom: 1px solid var(--fds-gray-200) !important;
+  position: relative !important;
+  padding-left: var(--fds-space-8) !important;
+}
+
+.fds-service-features li::before {
+  content: "✓" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--fds-gold) !important;
+  font-weight: var(--fds-font-bold) !important;
+}
+
+.fds-service-features li:last-child {
+  border-bottom: none !important;
+}
+
+/* Stats/Numbers */
+.fds-stats {
+  display: flex !important;
+  justify-content: center !important;
+  gap: var(--fds-space-12) !important;
+  text-align: center !important;
+  margin: var(--fds-space-16) 0 !important;
+}
+
+.fds-stat {
+  flex: 1 !important;
+  max-width: 200px !important;
+}
+
+.fds-stat-number {
+  font-size: var(--fds-text-5xl) !important;
+  font-weight: var(--fds-font-extrabold) !important;
+  color: var(--fds-gold) !important;
+  line-height: 1 !important;
+  margin-bottom: var(--fds-space-2) !important;
+}
+
+.fds-stat-label {
+  font-size: var(--fds-text-sm) !important;
+  color: var(--fds-gray-600) !important;
+  font-weight: var(--fds-font-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Testimonials */
+.fds-testimonial {
+  background: var(--fds-white) !important;
+  padding: var(--fds-space-10) !important;
+  border-left: 4px solid var(--fds-gold) !important;
+  box-shadow: var(--fds-shadow-md) !important;
+  margin-bottom: var(--fds-space-8) !important;
+}
+
+.fds-testimonial-content {
+  font-size: var(--fds-text-lg) !important;
+  font-style: italic !important;
+  line-height: 1.8 !important;
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+.fds-testimonial-author {
+  font-weight: var(--fds-font-semibold) !important;
+  color: var(--fds-black) !important;
+}
+
+.fds-testimonial-role {
+  font-size: var(--fds-text-sm) !important;
+  color: var(--fds-gray-500) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-top: var(--fds-space-1) !important;
+}
+
+/* Footer */
+.fds-footer {
+  background: var(--fds-black) !important;
+  color: var(--fds-white) !important;
+  padding: var(--fds-space-20) 0 var(--fds-space-8) 0 !important;
+}
+
+.fds-footer h3 {
+  color: var(--fds-white) !important;
+  margin-bottom: var(--fds-space-6) !important;
+}
+
+.fds-footer p {
+  color: var(--fds-gray-300) !important;
+}
+
+.fds-footer a {
+  color: var(--fds-gold) !important;
+  text-decoration: none !important;
+  transition: var(--fds-transition-fast) !important;
+}
+
+.fds-footer a:hover {
+  color: var(--fds-gold-light) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --fds-container-padding: 1rem;
+  }
+  
+  .fds-hero h1 {
+    font-size: var(--fds-text-4xl) !important;
+  }
+  
+  .fds-hero-cta {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .fds-grid-2,
+  .fds-grid-3,
+  .fds-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .fds-stats {
+    flex-direction: column !important;
+    gap: var(--fds-space-8) !important;
+  }
+  
+  .fds-nav {
+    display: none !important;
+  }
+  
+  .fds-section,
+  .fds-section-lg {
+    padding: var(--fds-space-16) 0 !important;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+.font-light { font-weight: var(--fds-font-light) !important; }
+.font-normal { font-weight: var(--fds-font-normal) !important; }
+.font-medium { font-weight: var(--fds-font-medium) !important; }
+.font-semibold { font-weight: var(--fds-font-semibold) !important; }
+.font-bold { font-weight: var(--fds-font-bold) !important; }
+.font-extrabold { font-weight: var(--fds-font-extrabold) !important; }
+
+.text-black { color: var(--fds-black) !important; }
+.text-white { color: var(--fds-white) !important; }
+.text-gold { color: var(--fds-gold) !important; }
+.text-gray-600 { color: var(--fds-gray-600) !important; }
+
+.bg-white { background-color: var(--fds-white) !important; }
+.bg-black { background-color: var(--fds-black) !important; }
+.bg-gold { background-color: var(--fds-gold) !important; }
+.bg-gray-50 { background-color: var(--fds-gray-50) !important; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-4 { margin-bottom: var(--fds-space-4) !important; }
+.mb-6 { margin-bottom: var(--fds-space-6) !important; }
+.mb-8 { margin-bottom: var(--fds-space-8) !important; }
+.mb-12 { margin-bottom: var(--fds-space-12) !important; }
+.mb-16 { margin-bottom: var(--fds-space-16) !important; }
